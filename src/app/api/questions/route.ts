@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { YoutubeTranscript } from "youtube-transcript";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI("AIzaSyBBgIDgY7vLqF506RV5N3oC77ktWzVnD4Y");
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY ?? "");
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
